@@ -4,7 +4,7 @@
 
 @section('content')
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 text-center mx-4 md:mx-0">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 mt-10 text-center mx-4 md:mx-0">
         <div class="bg-sky-100 max-w-full h-20">1</div>
         <div class="bg-sky-100 max-w-full h-20">2</div>
         <div class="bg-sky-100 max-w-full h-20">3</div>

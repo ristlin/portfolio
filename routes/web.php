@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Spatie\LaravelMarkdown\MarkdownRenderer;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+$markdown = Storage::get('public/samples/test.md');
+$html = app(Spatie\LaravelMarkdown\MarkdownRenderer::class)->toHtml($markdown);
 
-Route::get('/cv', function () {
-    return view('cv');
-});
+$skills = ['Laravel', 'PHP', 'Node.js', 'C++', 'JavaScript', 'Vue.js', 'HTML5', 'CSS', 'Adobe Creative Suite', 'Microsoft Office',
+'Final Cut Pro', 'Stripe API', 'Headless CMS', 'Chicago Manual of Style', 'AP Style Guide', 'Elements of Style'];
+
+Route::view('/', 'welcome', ['markdown' => $markdown]);
+Route::view('/cv', 'cv', ['skills' => $skills]);
 
 Route::get('/portfolio', function () {
     return view('portfolio');

@@ -14,13 +14,13 @@
     </head>
     <body>
         @section('header')
-        <div class="container mx-auto">
+        <div class="container mx-auto px-4">
             @include('layout.header')
             
             <hr>
         
             <div class="flex content-center">
-                <div class="flex-1 lg:px-48 sm:px-2">
+                <div class="flex-1">
                     @yield('content')
                 </div>
             </div>
